@@ -94,10 +94,10 @@ export default function Footer() {
               Fee Structure
             </h4>
             <ul className="space-y-2 md:space-y-3 text-xs sm:text-sm text-black">
-              <li><Link href="#" className="text-black underline-animate">Pricing Plans</Link></li>
-              <li><Link href="#" className="text-black underline-animate">Scholarships</Link></li>
-              <li><Link href="#" className="text-black underline-animate">Payment Options</Link></li>
-              <li><Link href="#" className="text-black underline-animate">Academy Calendar</Link></li>
+              <li><Link href="/tuition" className="text-black underline-animate">Pricing Plans</Link></li>
+              <li><Link href="/scholarships" className="text-black underline-animate">Scholarships</Link></li>
+              <li><Link href="/payment_options" className="text-black underline-animate">Payment Options</Link></li>
+              <li><Link href="academy_calendar" className="text-black underline-animate">Academy Calendar</Link></li>
             </ul>
           </motion.div>
 
