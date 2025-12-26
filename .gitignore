@@ -30,7 +30,7 @@ yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
-# env files (can opt-in for committing if needed)
+# env files
 .env
 .env.local
 .env.*.local
@@ -65,8 +65,3 @@ prisma/db.sqlite-journal
 # Build directories
 /dist
 /.cache
-
-# Zencoder/Zenflow artifacts
-.zencoder/
-.zenflow/
-.qodo/
