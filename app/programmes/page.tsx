@@ -3,20 +3,14 @@ import { CourseCard } from "@/components/cards/CourseCard";
 export default function ProgrammesPage() {
   const programmes = [
     { 
-      title: "AI Engineering", 
-      description: "Master deep learning, neural networks, and LLMs with hands-on projects and industry-standard tools.",
+      title: "AI Automation & LLMs", 
+      description: "Design, deploy, and scale intelligent automation systems using large language models and modern AI infrastructure.",
       instructor: "Dr. Paul Adebayo",
-      price: "₦4,000,000k"
+      price: "₦4,000,000"
     },
     { 
-      title: "ChatBot Development", 
-      description: "Build modern, Smart and configurable chatbots businesses need.",
-      instructor: "Engr. Sam Nnamdi",
-      price: "₦2,500,000k"
-    },
-    { 
-      title: "Data Science", 
-      description: "Learn to extract insights from complex data and build predictive models using advanced analytics.",
+      title: "Data Science & Machine Learning", 
+      description: "Learn to extract insights from complex data and build scalable machine learning models for real-world applications.",
       instructor: "Prof. Alan Turing",
       price: "₦3,500,000"
     },
@@ -33,7 +27,8 @@ export default function ProgrammesPage() {
             Industry-aligned standards ensuring global competitiveness. Choose the path that defines your future.
           </p>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-8">
           {programmes.map((p) => (
             <CourseCard 
               key={p.title}
