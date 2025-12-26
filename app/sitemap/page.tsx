@@ -2,7 +2,16 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Home, BookOpen, Users, Settings, Lock, HelpCircle, Briefcase, FileText } from "lucide-react";
+import {
+  Home,
+  BookOpen,
+  Users,
+  Settings,
+  Lock,
+  HelpCircle,
+  Briefcase,
+  FileText,
+} from "lucide-react";
 
 const siteStructure = {
   root: { label: "Dicta Hub", icon: Home, href: "/" },
@@ -13,9 +22,8 @@ const siteStructure = {
   ],
   programs: [
     { label: "All Programs", href: "/programmes", sub: true },
-    { label: "AI Engineering", href: "/programmes#ai" },
-    { label: "ChatBot Development", href: "/programmes#chatbot" },
-    { label: "Data Science", href: "/programmes#data" },
+    { label: "AI Automation & LLMs", href: "/programmes#ai" },
+    { label: "Data Science & Machine Learning", href: "/programmes#data" },
   ],
   academics: [
     { label: "Admissions", href: "/admissions" },
@@ -31,7 +39,7 @@ const siteStructure = {
   AcademicsFees: [
     { label: "Pricing Plans", href: "/tuition" },
     { label: "Scholarships", href: "/scholarship" },
-    { label: "Payment Options", href: "payment" },
+    { label: "Payment Options", href: "/payment" },
     { label: "Academy Calendar", href: "/portal/calendar" },
   ],
   portal: [
@@ -56,6 +64,7 @@ const siteStructure = {
   ],
 };
 
+// Node card
 const NodeCard = ({ label, href, isRoot = false }: { label: string; href: string; isRoot?: boolean }) => (
   <motion.div
     whileHover={{ scale: 1.05 }}
@@ -66,12 +75,10 @@ const NodeCard = ({ label, href, isRoot = false }: { label: string; href: string
       <div
         className={`
           px-4 py-3 font-semibold transition-all duration-300
-          ${
-            isRoot
-              ? "bg-gradient-to-r from-[#00c896] to-[#00a876] text-white text-lg shadow-lg rounded-full"
-              : "bg-white text-black border-2 border-gray-200 hover:border-[#00c896] hover:shadow-md text-sm rounded-xl"
-          }
-        `}
+          ${isRoot
+            ? "bg-gradient-to-r from-[#00c896] to-[#00a876] text-white text-lg shadow-lg rounded-full"
+            : "bg-white text-black border-2 border-gray-200 hover:border-[#00c896] hover:shadow-md text-sm rounded-xl"
+          }`}
       >
         {label}
       </div>
@@ -80,6 +87,7 @@ const NodeCard = ({ label, href, isRoot = false }: { label: string; href: string
   </motion.div>
 );
 
+// Section with animated connecting line
 const SectionGroup = ({
   title,
   icon: Icon,
@@ -98,19 +106,21 @@ const SectionGroup = ({
     transition={{ delay }}
     className="relative"
   >
-    {/* Connection line from root */}
-    <div className="absolute -top-8 left-1/2 w-0.5 h-8 bg-gradient-to-b from-[#00c896] to-transparent hidden md:block" />
-    
-    {/* Section container */}
+    {/* Animated connecting line */}
+    <motion.div
+      className="absolute -top-10 left-1/2 w-0.5 h-10 bg-gradient-to-b from-[#00c896] to-transparent hidden md:block"
+      initial={{ scaleY: 0 }}
+      animate={{ scaleY: 1 }}
+      transition={{ duration: 0.6, delay: delay }}
+    />
+
     <div className="bg-white rounded-2xl border-2 border-gray-100 p-6 hover:border-[#00c896]/30 hover:shadow-lg transition-all">
-      {/* Section title */}
       <div className="flex items-center gap-2 mb-4 pb-3 border-b-2 border-gray-100">
         {Icon && <Icon size={20} className="text-[#00c896]" />}
         <h3 className="text-lg font-bold text-black">{title}</h3>
         <div className="flex-1 h-0.5 bg-gradient-to-r from-[#00c896]/20 to-transparent" />
       </div>
 
-      {/* Links grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
         {items.map((item, idx) => (
           <motion.div
@@ -152,7 +162,7 @@ export default function SitemapPage() {
             Site Structure
           </h1>
           <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-            Navigate through our organized site map with visual connections
+            Navigate through our organized site map with animated connections
           </p>
         </motion.div>
 
@@ -166,78 +176,28 @@ export default function SitemapPage() {
           <NodeCard label="Dicta Hub" href="/" isRoot />
         </motion.div>
 
-        {/* Main Navigation Flow */}
+        {/* Sections */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {/* Column 1 */}
           <div className="space-y-8">
-            <SectionGroup
-              title="Main"
-              icon={Home}
-              items={siteStructure.main}
-              delay={0.1}
-            />
-            <SectionGroup
-              title="Programs"
-              icon={BookOpen}
-              items={siteStructure.programs}
-              delay={0.2}
-            />
-            <SectionGroup
-              title="Course Duration"
-              icon={FileText}
-              items={siteStructure.courseDuration}
-              delay={0.3}
-            />
+            <SectionGroup title="Main" icon={Home} items={siteStructure.main} delay={0.1} />
+            <SectionGroup title="Programs" icon={BookOpen} items={siteStructure.programs} delay={0.2} />
+            <SectionGroup title="Course Duration" icon={FileText} items={siteStructure.courseDuration} delay={0.3} />
           </div>
 
           {/* Column 2 */}
           <div className="space-y-8">
-            <SectionGroup
-              title="Academics"
-              icon={BookOpen}
-              items={siteStructure.academics}
-              delay={0.15}
-            />
-            <SectionGroup
-              title="Academics & Fees"
-              icon={Briefcase}
-              items={siteStructure.AcademicsFees}
-              delay={0.25}
-            />
-            <SectionGroup
-              title="Resources"
-              icon={HelpCircle}
-              items={siteStructure.resources}
-              delay={0.4}
-            />
+            <SectionGroup title="Academics" icon={BookOpen} items={siteStructure.academics} delay={0.15} />
+            <SectionGroup title="Academics & Fees" icon={Briefcase} items={siteStructure.AcademicsFees} delay={0.25} />
+            <SectionGroup title="Resources" icon={HelpCircle} items={siteStructure.resources} delay={0.4} />
           </div>
 
           {/* Column 3 */}
           <div className="space-y-8">
-            <SectionGroup
-              title="Student Portal"
-              icon={Users}
-              items={siteStructure.portal}
-              delay={0.2}
-            />
-            <SectionGroup
-              title="Legal"
-              icon={Lock}
-              items={siteStructure.legal}
-              delay={0.35}
-            />
+            <SectionGroup title="Student Portal" icon={Users} items={siteStructure.portal} delay={0.2} />
+            <SectionGroup title="Legal" icon={Lock} items={siteStructure.legal} delay={0.35} />
           </div>
         </div>
-
-        {/* Connection visualization hint */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.5 }}
-          className="text-center text-gray-500 text-sm mb-12"
-        >
-          <p>All sections are connected to the main Dicta Hub site</p>
-        </motion.div>
 
         {/* Footer CTA */}
         <motion.div
@@ -246,9 +206,7 @@ export default function SitemapPage() {
           transition={{ delay: 0.6 }}
           className="text-center"
         >
-          <p className="text-gray-600 mb-6">
-            Need help finding something?
-          </p>
+          <p className="text-gray-600 mb-6">Need help finding something?</p>
           <Link
             href="/contact"
             className="inline-block px-8 py-3 bg-gradient-to-r from-[#00c896] to-[#00a876] hover:from-[#00b087] hover:to-[#009166] text-white font-semibold rounded-full transition-all shadow-lg hover:shadow-xl"
