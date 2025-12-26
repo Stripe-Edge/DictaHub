@@ -17,7 +17,7 @@ export default function AboutPage() {
             <div className="space-y-4">
               <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">Our Mission</h2>
               <p className="text-base text-gray-700 leading-relaxed">
-                To empower Africa's next generation with world-class AI and technology education that meets global standards.
+                To empower World's next generation with world-class AI and technology education that meets global standards.
               </p>
             </div>
             <div className="space-y-4">
