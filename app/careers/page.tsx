@@ -25,10 +25,10 @@ export default function CareersPage() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.1, duration: 0.25 }}
       >
-        Help us shape the future of AI and Tech in Africa.
+        Help us shape the future of AI and Tech in World.
       </motion.p>
       <div className="space-y-4">
-        {[{ title: "AI Instructor", loc: "Remote / Full-time" }, { title: "Software Engineer", loc: "Lagos / Hybrid" }].map((job, idx) => (
+        {[{ title: "AI Instructor", loc: "Remote / Full-time" }, { title: "AI Engineer", loc: "Lagos / Hybrid" }].map((job, idx) => (
           <motion.div
             key={job.title}
             className="p-6 border rounded-lg flex justify-between items-center"
