@@ -70,8 +70,9 @@ export default function HeroSection() {
           >
             <Button variant="secondary" className="bg-white shadow-md flex items-center gap-2 py-2 px-4 h-auto text-sm">
               <span className="w-2 h-2 bg-green-500 rounded-full" />
-              Try Dicta AI
+              Live Support
               <ArrowRight size={16} />
+              <Link href="/ai-chat">
             </Button>
           </motion.div>
         </motion.div>
