@@ -5,26 +5,20 @@ export default function ProgrammesPage() {
     { 
       title: "AI Engineering", 
       description: "Master deep learning, neural networks, and LLMs with hands-on projects and industry-standard tools.",
-      instructor: "Dr. Jane Doe",
-      price: "₦500k"
+      instructor: "Dr. Paul Adebayo",
+      price: "₦4,000,000k"
     },
     { 
-      title: "Full-Stack Development", 
-      description: "Build modern, scalable web applications using Next.js, TypeScript, and high-performance backends.",
-      instructor: "Engr. Sam Smith",
-      price: "₦450k"
+      title: "ChatBot Development", 
+      description: "Build modern, Smart and configurable chatbots businesses need.",
+      instructor: "Engr. Sam Nnamdi",
+      price: "₦2,500,000k"
     },
     { 
       title: "Data Science", 
       description: "Learn to extract insights from complex data and build predictive models using advanced analytics.",
       instructor: "Prof. Alan Turing",
-      price: "₦400k"
-    },
-    { 
-      title: "Cybersecurity", 
-      description: "Protect digital assets and infrastructures from sophisticated cyber threats and vulnerabilities.",
-      instructor: "Kevin Mitnick",
-      price: "₦550k"
+      price: "₦3,500,000"
     },
   ];
 
