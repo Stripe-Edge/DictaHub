@@ -28,10 +28,10 @@ const siteStructure = {
     { label: "12-Month Diplomas", href: "#" },
     { label: "Self-Paced Learning", href: "#" },
   ],
-  feeStructure: [
-    { label: "Pricing Plans", href: "#" },
-    { label: "Scholarships", href: "#" },
-    { label: "Payment Options", href: "#" },
+  AcademicsFees: [
+    { label: "Pricing Plans", href: "/tuition" },
+    { label: "Scholarships", href: "/scholarship" },
+    { label: "Payment Options", href: "payment" },
     { label: "Academy Calendar", href: "/portal/calendar" },
   ],
   portal: [
@@ -199,9 +199,9 @@ export default function SitemapPage() {
               delay={0.15}
             />
             <SectionGroup
-              title="Fee Structure"
+              title="Academics & Fees"
               icon={Briefcase}
-              items={siteStructure.feeStructure}
+              items={siteStructure.AcademicsFees}
               delay={0.25}
             />
             <SectionGroup
