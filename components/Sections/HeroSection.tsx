@@ -24,7 +24,7 @@ export default function HeroSection() {
           transition={{ duration: 0.6, delay: 0.2 }}
         >
           <h1 className="text-[3.5rem] md:text-[4.2rem] font-extrabold leading-[1.05] text-black mb-8">
-            Building Africa's next generation of AI innovators
+            Building World's next generation of AI innovators
           </h1>
 
           <p className="text-gray-700 max-w-md mb-10 text-lg">
