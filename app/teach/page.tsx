@@ -21,7 +21,7 @@ export default function TeachPage() {
           Teach at Dicta Hub
         </h1>
         <p className="text-gray-600 text-center mb-12 max-w-lg mx-auto text-lg">
-          Join our community of expert instructors and shape the future of AI education in Africa. Share your knowledge and inspire the next generation of innovators.
+          Join our community of expert instructors and shape the future of AI education in World. Share your knowledge and inspire the next generation of innovators.
         </p>
         
         <motion.form 
