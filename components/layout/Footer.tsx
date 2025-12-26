@@ -24,7 +24,7 @@ export default function Footer() {
             </h3>
             <p className="text-xs sm:text-sm text-black leading-relaxed max-w-xs">
               A premium AI & technology academy delivering UK-style education
-              for Africa's next generation of innovators.
+              for World's next generation of innovators.
             </p>
           </motion.div>
 
@@ -91,7 +91,7 @@ export default function Footer() {
             transition={{ delay: 0.4 }}
           >
             <h4 className="text-xs md:text-sm font-semibold uppercase tracking-wider text-black mb-3 md:mb-4">
-              Fee Structure
+              Academics & Fees
             </h4>
             <ul className="space-y-2 md:space-y-3 text-xs sm:text-sm text-black">
               <li><Link href="/tuition" className="text-black underline-animate">Pricing Plans</Link></li>
