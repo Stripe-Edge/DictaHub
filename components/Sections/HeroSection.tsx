@@ -72,7 +72,7 @@ export default function HeroSection() {
               <span className="w-2 h-2 bg-green-500 rounded-full" />
               Live Support
               <ArrowRight size={16} />
-              <Link href="/ai-chat">
+              <Link href="/ai-agent">
             </Button>
           </motion.div>
         </motion.div>
