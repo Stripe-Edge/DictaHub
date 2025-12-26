@@ -1,10 +1,10 @@
 # DictaHub
 
-A modern educational platform for AI and tech skill development in Africa. Built with Next.js 14 and React 18, providing a comprehensive learning platform with intuitive navigation, responsive design, and engaging user experience.
+A modern educational platform for AI and tech skill development. Built with Next.js 14 and React 18, providing a comprehensive learning platform with intuitive navigation, responsive design, and engaging user experience.
 
 ## Features
 
-**Pages & Routes**
+**Pages & Routes **
 - Homepage with navigation
 - Admissions form page
 - Teach at Dicta Hub instructor registration
