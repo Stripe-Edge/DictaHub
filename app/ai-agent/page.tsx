@@ -40,7 +40,7 @@ export default function AIAgentPage() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5, ease: easeOut }}
-      className="max-w-4xl mx-auto py-20 px-8 h-[calc(100vh-100px)] flex flex-col"
+      className="max-w-4xl mx-auto py-20 px-4 sm:px-6 md:px-8 flex flex-col"
     >
       {/* Header */}
       <div className="text-center mb-10">
@@ -48,17 +48,17 @@ export default function AIAgentPage() {
           initial={{ scale: 0.8 }}
           animate={{ scale: 1 }}
           transition={{ duration: 0.5, ease: easeOut }}
-          className="inline-flex items-center gap-2 bg-mint px-4 py-2 rounded-full mb-4"
+          className="inline-flex items-center gap-2 bg-gradient-to-r from-[#00c896] to-[#00a876] px-4 py-2 rounded-full mb-4 shadow-lg"
         >
-          <Sparkles size={16} />
-          <span className="text-xs font-bold tracking-widest uppercase text-black">Assistant</span>
+          <Sparkles size={16} className="text-white" />
+          <span className="text-xs font-bold tracking-widest uppercase text-white">Assistant</span>
         </motion.div>
         <h1 className="text-4xl md:text-5xl font-black text-black">Dicta AI Agent</h1>
       </div>
 
-      {/* Chat container */}
-      <div className="flex-1 bg-white shadow-2xl shadow-black/5 border border-gray-100 rounded-[3rem] overflow-hidden flex flex-col">
-        <div className="flex-1 overflow-y-auto p-8 space-y-8 scroll-smooth">
+      {/* Gradient card container */}
+      <div className="flex-1 bg-gradient-to-r from-[#00c896]/20 to-[#00a876]/10 rounded-3xl shadow-2xl overflow-hidden flex flex-col hover:shadow-3xl transition-shadow duration-300">
+        <div className="flex-1 overflow-y-auto p-6 md:p-8 space-y-6 scroll-smooth">
           <AnimatePresence mode="popLayout">
             {messages.length === 0 ? (
               <motion.div
@@ -67,10 +67,10 @@ export default function AIAgentPage() {
                 exit={{ opacity: 0 }}
                 className="h-full flex flex-col items-center justify-center text-center p-12"
               >
-                <div className="w-20 h-20 bg-gray-50 rounded-3xl flex items-center justify-center mb-6">
+                <div className="w-20 h-20 bg-white rounded-3xl flex items-center justify-center mb-6 shadow-lg">
                   <Bot size={40} className="text-gray-300" />
                 </div>
-                <p className="text-gray-400 max-w-xs">
+                <p className="text-gray-500 max-w-xs">
                   Ask me anything about Dicta Hub courses, admissions, or tech in general!
                 </p>
               </motion.div>
@@ -84,21 +84,22 @@ export default function AIAgentPage() {
                   className={`flex items-start gap-4 ${msg.role === 'user' ? 'flex-row-reverse' : ''}`}
                 >
                   <div
-                    className={`w-10 h-10 rounded-2xl flex items-center justify-center flex-shrink-0 ${
-                      msg.role === 'user' ? 'bg-black text-white' : 'bg-mint text-black'
+                    className={`w-10 h-10 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-md ${
+                      msg.role === 'user' ? 'bg-black text-white' : 'bg-white text-black'
                     }`}
                   >
                     {msg.role === 'user' ? <User size={18} /> : <Bot size={18} />}
                   </div>
-                  <div
-                    className={`max-w-[80%] p-5 rounded-3xl ${
+                  <motion.div
+                    whileHover={{ scale: 1.03 }}
+                    className={`max-w-[80%] p-4 md:p-5 rounded-2xl shadow-sm ${
                       msg.role === 'user'
-                        ? 'bg-gray-100 rounded-tr-none text-black'
-                        : 'bg-mint/20 rounded-tl-none text-black'
+                        ? 'bg-white text-black rounded-tr-none'
+                        : 'bg-white/80 text-black rounded-tl-none'
                     }`}
                   >
-                    <p className="text-sm leading-relaxed">{msg.text}</p>
-                  </div>
+                    <p className="text-sm md:text-base leading-relaxed">{msg.text}</p>
+                  </motion.div>
                 </motion.div>
               ))
             )}
@@ -111,10 +112,10 @@ export default function AIAgentPage() {
               transition={{ duration: 0.3 }}
               className="flex items-start gap-4"
             >
-              <div className="w-10 h-10 rounded-2xl bg-mint text-black flex items-center justify-center animate-pulse">
+              <div className="w-10 h-10 rounded-2xl bg-white text-black flex items-center justify-center animate-pulse shadow-md">
                 <Bot size={18} />
               </div>
-              <div className="bg-mint/10 p-5 rounded-3xl rounded-tl-none">
+              <div className="bg-white/80 p-4 rounded-2xl rounded-tl-none shadow-sm">
                 <div className="flex gap-1">
                   <div className="w-1.5 h-1.5 bg-black rounded-full animate-bounce"></div>
                   <div className="w-1.5 h-1.5 bg-black rounded-full animate-bounce delay-200"></div>
@@ -126,7 +127,10 @@ export default function AIAgentPage() {
         </div>
 
         {/* Input form */}
-        <form onSubmit={handleSubmit} className="p-6 bg-gray-50/50 border-t border-gray-100 flex items-center gap-4">
+        <form
+          onSubmit={handleSubmit}
+          className="p-4 md:p-6 bg-white/50 border-t border-gray-200 flex items-center gap-4"
+        >
           <Input
             value={prompt}
             onChange={e => setPrompt(e.target.value)}
