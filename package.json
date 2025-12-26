@@ -1,0 +1,38 @@
+{
+  "name": "dicta-hub",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "prisma generate && next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "axios": "^1.6.7",
+    "cloudinary": "^2.0.1",
+    "clsx": "^2.1.1",
+    "framer-motion": "^11.3.28",
+    "lucide-react": "^0.344.0",
+    "next": "^14.2.35",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "resend": "^3.1.0",
+    "tailwind-merge": "^2.6.0",
+    "twilio": "^5.0.0",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "@prisma/client": "^5.7.0",
+    "@types/node": "^20.11.20",
+    "@types/react": "^18.2.58",
+    "@types/react-dom": "^18.2.19",
+    "autoprefixer": "^10.4.23",
+    "eslint": "^9.39.2",
+    "eslint-config-next": "^16.1.1",
+    "postcss": "^8.5.6",
+    "prisma": "^5.7.0",
+    "tailwindcss": "^3.4.19",
+    "typescript": "^5.3.3"
+  }
+}
