@@ -8,6 +8,7 @@ import { useState } from "react";
 
 export default function TeachPage() {
   const [expertise, setExpertise] = useState("");
+  const [agreed, setAgreed] = useState(false);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#e7fbe9] via-[#f5fff7] to-white">
@@ -17,13 +18,15 @@ export default function TeachPage() {
         transition={{ duration: 0.5 }}
         className="max-w-4xl mx-auto py-20 px-8"
       >
+        {/* Header */}
         <h1 className="text-5xl font-extrabold mb-8 text-center tracking-tight text-black">
           Teach at Dicta Hub
         </h1>
         <p className="text-gray-600 text-center mb-12 max-w-lg mx-auto text-lg">
-          Join our community of expert instructors and shape the future of AI education in World. Share your knowledge and inspire the next generation of innovators.
+          Join our community of expert instructors and shape the future of AI education in the world. Share your knowledge and inspire the next generation of innovators.
         </p>
         
+        {/* Form */}
         <motion.form 
           id="instructor-form"
           initial={{ opacity: 0, scale: 0.95 }}
@@ -81,23 +84,49 @@ export default function TeachPage() {
             />
           </div>
 
-          <div>
-            <label className="flex items-center gap-3 cursor-pointer">
-              <input 
-                type="checkbox" 
-                className="w-4 h-4 rounded border-gray-300 text-[#00c896] focus:ring-[#00c896]"
+          {/* Modern toggle checkbox with links */}
+          <div className="flex items-center gap-3">
+            <button
+              type="button"
+              onClick={() => setAgreed(!agreed)}
+              className={`w-12 h-6 flex items-center rounded-full p-1 transition-colors duration-300 ${agreed ? "bg-[#00c896]" : "bg-gray-300"}`}
+            >
+              <span
+                className={`bg-white w-4 h-4 rounded-full shadow-md transform transition-transform duration-300 ${agreed ? "translate-x-6" : "translate-x-0"}`}
               />
-              <span className="text-sm text-gray-700">
-                I agree to the terms and conditions
-              </span>
-            </label>
+            </button>
+            <span className="text-sm text-gray-700">
+              I agree to the{' '}
+              <a 
+                href="/terms" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-[#00c896] underline hover:text-[#009166] transition-colors"
+              >
+                Terms of Service
+              </a>{' '}
+              and{' '}
+              <a 
+                href="/privacy" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-[#00c896] underline hover:text-[#009166] transition-colors"
+              >
+                Privacy Policy
+              </a>.
+            </span>
           </div>
 
-          <Button className="w-full bg-gradient-to-r from-[#00c896] to-[#00a876] hover:from-[#00b087] hover:to-[#009166] text-white font-semibold py-3 rounded-full transition-all">
+          <Button 
+            type="submit"
+            disabled={!agreed}
+            className="w-full bg-gradient-to-r from-[#00c896] to-[#00a876] hover:from-[#00b087] hover:to-[#009166] text-white font-semibold py-3 rounded-full transition-all disabled:opacity-50"
+          >
             Submit Application
           </Button>
         </motion.form>
 
+        {/* Features */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
