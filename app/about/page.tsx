@@ -110,7 +110,7 @@ export default function AboutPage() {
                   priority
                 />
                 {/* White vertical line - thinner and at specific position */}
-                <div className="absolute inset-y-0 left-[65%] w-[3px] bg-white"></div>
+                <div className="absolute inset-y-0 left-[65%] w-2 bg-white"></div>
               </div>
 
               {/* Floating badge with bounce animation */}
