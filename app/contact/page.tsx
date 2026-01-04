@@ -139,22 +139,24 @@ export default function ContactPage() {
             variants={fadeInUp}
             className="grid grid-cols-2 md:grid-cols-4 gap-6"
           >
-            {/* Los Angeles */}
-            <div className="relative rounded-xl overflow-hidden shadow-lg group cursor-pointer">
-              <div className="relative h-[250px]">
-                <Image
-                  src="/assets/gallery-7.jpg"
-                  alt="Los Angeles, California"
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-              </div>
-              <div className="bg-white p-4 text-center">
-                <h3 className="font-bold text-gray-900 mb-1">
+            {/* Los Angeles - Main Branch */}
+            <div className="relative  overflow-hidden shadow-lg group cursor-pointer h-[380px]">
+              <Image
+                src="/assets/gallery-7.jpg"
+                alt="Los Angeles, California"
+                fill
+                className="object-cover group-hover:scale-105 transition-transform duration-300"
+              />
+              {/* White overlay container at bottom - INSIDE image */}
+              <div className="absolute bottom-6 left-6 right-6 bg-white p-5 text-center shadow-xl">
+                <p className="text-orange-500 text-xs font-bold mb-2 uppercase tracking-wider">
+                  Main Branch
+                </p>
+                <h3 className="font-bold text-gray-900 text-base mb-2">
                   Los Angeles, California
                 </h3>
-                <p className="text-xs text-gray-500">
-                  1552 Olympic Boulevard
+                <p className="text-xs text-gray-500 leading-relaxed">
+                  1702 Olympic Boulevard
                   <br />
                   Santa Monica, CA 90404
                 </p>
@@ -162,39 +164,41 @@ export default function ContactPage() {
             </div>
 
             {/* Tokyo */}
-            <div className="relative rounded-xl overflow-hidden shadow-lg group cursor-pointer">
-              <div className="relative h-[250px]">
-                <Image
-                  src="/assets/gallery-7.jpg"
-                  alt="Tokyo, Japan"
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-              </div>
-              <div className="bg-white p-4 text-center">
-                <h3 className="font-bold text-gray-900 mb-1">Tokyo, Japan</h3>
-                <p className="text-xs text-gray-500">
-                  8F 1-10-1 Ginza
+            <div className="relative  overflow-hidden shadow-lg group cursor-pointer h-[380px]">
+              <Image
+                src="/assets/gallery-7.jpg"
+                alt="Tokyo, Japan"
+                fill
+                className="object-cover group-hover:scale-105 transition-transform duration-300"
+              />
+              {/* White overlay container at bottom - INSIDE image */}
+              <div className="absolute bottom-6 left-6 right-6 bg-white  p-5 text-center shadow-xl">
+                <h3 className="font-bold text-gray-900 text-base mb-2">
+                  Tokyo, Japan
+                </h3>
+                <p className="text-xs text-gray-500 leading-relaxed">
+                  901 N Pitt Str., Suite 170
                   <br />
-                  Tokyo 104 World, Japan
+                  Tokyo, VA 22314, Japan
                 </p>
               </div>
             </div>
 
             {/* Moscow */}
-            <div className="relative rounded-xl overflow-hidden shadow-lg group cursor-pointer">
-              <div className="relative h-[250px]">
-                <Image
-                  src="/assets/gallery-7.jpg"
-                  alt="Moscow, Russia"
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-              </div>
-              <div className="bg-white p-4 text-center">
-                <h3 className="font-bold text-gray-900 mb-1">Moscow, Russia</h3>
-                <p className="text-xs text-gray-500">
-                  Kremlevskaya 435a, 010-NL
+            <div className="relative  overflow-hidden shadow-lg group cursor-pointer h-[380px]">
+              <Image
+                src="/assets/gallery-7.jpg"
+                alt="Moscow, Russia"
+                fill
+                className="object-cover group-hover:scale-105 transition-transform duration-300"
+              />
+              {/* White overlay container at bottom - INSIDE image */}
+              <div className="absolute bottom-6 left-6 right-6 bg-white  p-5 text-center shadow-xl">
+                <h3 className="font-bold text-gray-900 text-base mb-2">
+                  Moscow, Russia
+                </h3>
+                <p className="text-xs text-gray-500 leading-relaxed">
+                  Anjeliersstraat 470H, 1015 NL
                   <br />
                   Moscow, Russia
                 </p>
@@ -202,19 +206,20 @@ export default function ContactPage() {
             </div>
 
             {/* Mumbai */}
-            <div className="relative rounded-xl overflow-hidden shadow-lg group cursor-pointer">
-              <div className="relative h-[250px]">
-                <Image
-                  src="/assets/gallery-7.jpg"
-                  alt="Mumbai, India"
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-              </div>
-              <div className="bg-white p-4 text-center">
-                <h3 className="font-bold text-gray-900 mb-1">Mumbai, India</h3>
-                <p className="text-xs text-gray-500">
-                  Taj East 2/46-L, 4th Floor
+            <div className="relative  overflow-hidden shadow-lg group cursor-pointer h-[380px]">
+              <Image
+                src="/assets/gallery-7.jpg"
+                alt="Mumbai, India"
+                fill
+                className="object-cover group-hover:scale-105 transition-transform duration-300"
+              />
+              {/* White overlay container at bottom - INSIDE image */}
+              <div className="absolute bottom-6 left-6 right-6 bg-white  p-5 text-center shadow-xl">
+                <h3 className="font-bold text-gray-900 text-base mb-2">
+                  Mumbai, India
+                </h3>
+                <p className="text-xs text-gray-500 leading-relaxed">
+                  36 East 20th St, 6th Floor
                   <br />
                   Mumbai, India
                 </p>
@@ -225,7 +230,7 @@ export default function ContactPage() {
       </section>
 
       {/* CONTACT FORM & INFO SECTION */}
-      <section className="py-16 sm:py-20 bg-white">
+      <section className="py-16 sm:py-20 bg-gray-100">
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -236,14 +241,14 @@ export default function ContactPage() {
           <div className="grid md:grid-cols-2 gap-12 lg:gap-16">
             {/* Left: Contact Info */}
             <motion.div variants={fadeInUp}>
-              <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6">
+              <h3 className="text-2xl sm:text-3xl  font-bold text-gray-900 mb-6">
                 Will you be in Los Angeles or any other branches any time soon?
                 Stop by the office! We'd love to meet.
               </h3>
 
               <div className="space-y-6">
                 {/* Address */}
-                <div className="grid grid-cols-2">
+                <div className="grid grid-cols-2 py-4 border-b-[1px] border-gray-200">
                   <div>
                     <p className="text-green-500 text-sm font-bold mb-2 uppercase tracking-wide">
                       Address
@@ -259,34 +264,42 @@ export default function ContactPage() {
                 </div>
 
                 {/* Phone */}
-                <div>
-                  <p className="text-green-500 text-sm font-bold mb-2 uppercase tracking-wide">
-                    Phone Number
-                  </p>
-                  <p className="text-gray-700 text-sm">
-                    (480) 555-0103
-                    <br />
-                    (219) 555-0114
-                  </p>
+                <div className=" grid grid-cols-2 border-gray-200 py-4 border-b-[1px]">
+                  <div>
+                    <p className="text-green-500 text-sm font-bold mb-2 uppercase tracking-wide">
+                      Phone Number
+                    </p>
+                  </div>
+                  <div>
+                    <p className="text-gray-700 text-sm">
+                      (480) 555-0103
+                      <br />
+                      (219) 555-0114
+                    </p>
+                  </div>
                 </div>
 
                 {/* Email */}
-                <div>
-                  <p className="text-green-500 text-sm font-bold mb-2 uppercase tracking-wide">
-                    Email Address
-                  </p>
-                  <p className="text-gray-700 text-sm">
-                    help.eduguard@gmail.com
-                    <br />
-                    contact.eduguard@gmail.com
-                  </p>
+                <div className="grid grid-cols-2">
+                  <div>
+                    <p className="text-green-500 text-sm font-bold mb-2 uppercase tracking-wide">
+                      Email Address
+                    </p>
+                  </div>
+                  <div>
+                    <p className="text-gray-700 text-sm">
+                      help.eduguard@gmail.com
+                      <br />
+                      contact.eduguard@gmail.com
+                    </p>
+                  </div>
                 </div>
               </div>
             </motion.div>
 
             {/* Right: Contact Form */}
             <motion.div variants={fadeInUp}>
-              <div className="bg-gray-50 rounded-xl p-8">
+              <div className="bg-white p-8">
                 <h3 className="text-xl font-bold text-gray-900 mb-2">
                   Get In touch
                 </h3>
