@@ -52,7 +52,7 @@ export default function ContactPage() {
       </section>
 
       {/* CONNECT WITH US SECTION */}
-      <section className=" bg-white">
+      <section className="bg-white relative overflow-hidden pt-4 md:pt-2 pb-12">
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -60,57 +60,63 @@ export default function ContactPage() {
           variants={staggerContainer}
           className={container}
         >
-          <motion.div variants={fadeInUp} className=" overflow-hidden">
-            <div className="grid md:grid-cols-2">
-              {/* Left: Text Content */}
-              <div className="p-8 sm:p-12 lg:p-16 flex flex-col justify-center">
-                <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-                  Connect with us
-                </h2>
-                <p className="text-gray-600 text-sm leading-relaxed mb-6 max-w-md">
-                  Want to chat? We'd love to hear from you! Get in touch with
-                  our Customer Success Team to inquire about speaking events,
-                  advertising rates, or just say hello.
-                </p>
-                <button className="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-lg flex items-center gap-2 w-fit transition-colors">
-                  <FaEnvelope className="text-lg" />
-                  <span className="font-medium">Copy Email</span>
-                </button>
-              </div>
-
-              {/* Right: Image */}
-              <div className="relative h-[300px] md:h-auto min-h-[400px]">
+          {/* Main Grid */}
+          <motion.div variants={fadeInUp}>
+            <div className="grid md:grid-cols-2 gap-y-12 md:gap-y-0 min-h-[520px]">
+              {/* Image (comes first on mobile) */}
+              <div className="order-1 md:order-2 relative h-[380px] md:h-auto">
                 <Image
                   src="/assets/contact-hero.png"
                   alt="Contact Us"
                   fill
-                  className="object-cover object-top"
                   priority
+                  className="
+              object-contain
+              md:object-cover
+              md:object-top
+            "
                 />
+              </div>
+
+              {/* Text */}
+              <div className="order-2 md:order-1 flex items-center px-8 sm:px-12 lg:px-16">
+                <div className="max-w-md">
+                  <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+                    Connect with us
+                  </h2>
+
+                  <p className="text-gray-600 text-sm leading-relaxed mb-6">
+                    Want to chat? We'd love to hear from you! Get in touch with
+                    our Customer Success Team to inquire about speaking events,
+                    advertising rates, or just say hello.
+                  </p>
+
+                  <button className="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-lg flex items-center gap-2 transition-colors">
+                    <FaEnvelope className="text-lg" />
+                    <span className="font-medium">Copy Email</span>
+                  </button>
+                </div>
               </div>
             </div>
           </motion.div>
 
-          {/* Floating badge */}
-          <div className="flex justify-end mt-4">
-            <motion.div
-              className="bg-white rounded-full px-5 py-2.5 shadow-lg flex items-center gap-2 border border-gray-100"
-              whileHover={{
-                y: [0, -6, 0],
-                transition: {
-                  duration: 0.6,
-                  repeat: Infinity,
-                  repeatType: "loop",
-                  ease: "easeInOut",
-                },
-              }}
-            >
-              <div className="w-2 h-2 bg-green-400 rounded-full"></div>
-              <button className="text-sm font-medium text-gray-700">
-                Dicta Hub AI
-              </button>
-            </motion.div>
-          </div>
+          {/* Floating Button */}
+          <motion.div
+            className="absolute bottom-6 right-6 bg-white rounded-full px-5 py-2.5 shadow-lg flex items-center gap-2 border border-gray-100 z-10"
+            whileHover={{
+              y: [0, -6, 0],
+              transition: {
+                duration: 0.6,
+                repeat: Infinity,
+                ease: "easeInOut",
+              },
+            }}
+          >
+            <span className="w-2 h-2 bg-green-400 rounded-full"></span>
+            <span className="text-sm font-medium text-gray-700">
+              Dicta Hub AI
+            </span>
+          </motion.div>
         </motion.div>
       </section>
 
